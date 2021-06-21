@@ -1,17 +1,16 @@
-
 # 적용 1 - lint-staged, husky 사용 eslint, prettier를 commit 전에 적용 시키기
 
 1. husky(git hook) 설치
 
-* git hook, git 명령어 이벤트 수행시 명령어 수행 할 수 있게 도와주는 lib
-* npx husky install은 .git 파일 있는 dir에서 수행 해야한다.
+- git hook, git 명령어 이벤트 수행시 명령어 수행 할 수 있게 도와주는 lib
+- npx husky install은 .git 파일 있는 dir에서 수행 해야한다.
 
 ```
   npm i husky -D
   npx husky install
 ```
 
-* husky package.json 설정
+- husky package.json 설정
 
 ```
   "husky": {
@@ -22,7 +21,7 @@
 ```
 
 2. commit할때 git hook(husky)를 사용해 특정 명령어 수행
-: husky 명령어를 통해서 "npx lint-staged" 명령어 수행
+   : husky 명령어를 통해서 "npx lint-staged" 명령어 수행
 
 ```
   npx husky add .husky/pre-commit "npx lint-staged"
@@ -42,10 +41,10 @@
 ```
 
 4. lint-staged 설정
-: js, json 파일에서 할 수 있다.
-: package.json 설정 방법
-: **/*.js: 모든 폴더 js파일에 대해서
-  : eslint --fix, prettier --write, git add  명령어를 수행
+   : js, json 파일에서 할 수 있다.
+   : package.json 설정 방법
+   : \*_/_.js: 모든 폴더 js파일에 대해서
+   : eslint --fix, prettier --write, git add 명령어를 수행
 
 ```
   "lint-staged": {
@@ -61,14 +60,46 @@
 
 [react-router-dom quick start](https://reactrouter.com/web/guides/quick-start)
 
-# 적용 3 - nested Routing
+# 적용 3 - Dynamic Routing & nested Routing
 
 [nested-routing quick start](https://reactrouter.com/web/guides/quick-start/2nd-example-nested-routing)
 
-* [useRouteMatch](https://reactrouter.com/web/api/Hooks/useroutematch)
-  * The useRouteMatch hook attempts to match the current URL in the same way that a <Route> would. It’s mostly useful for getting access to the match data without actually rendering a <Route>.
-* [useParams](https://reactrouter.com/web/api/Hooks/useparams)
-  * useParams returns an object of key/value pairs of URL parameters. Use it to access match.params of the current <Route>
+- [useRouteMatch](https://reactrouter.com/web/api/Hooks/useroutematch)
+  - The useRouteMatch hook attempts to match the current URL in the same way that a <Route> would. It’s mostly useful for getting access to the match data without actually rendering a <Route>.
+- [useParams](https://reactrouter.com/web/api/Hooks/useparams)
+  - useParams returns an object of key/value pairs of URL parameters. Use it to access match.params of the current <Route>
+
+# 적용 4 - Dynamic Routing(with Route props)
+
+- routing시 이동시에 url을 통해 정보 전달 방법
+  - 아래 두가지 방법 모두 route-props 정보를 통해서 얻을 수 있다.
+  
+  1. useParams hook을 이용해서 value 전달
+     1. props.match.params
+  2. query parameters(key,value pair)
+     1. props.location.search
+
+- [route-props](https://reactrouter.com/web/api/Route/route-props)
+  - All three render methods will be passed the same three route props
+    - match, location, history
+
+  - route-props의 props.location.search
+    - url ? 기호 뒤 key=value값 사용
+  - useParams
+    - route-props의 props.match.params와 같음
+    - Route property path에 "about/:KEY" 설정
+    - localhost:3000/about/2 입력시 props.match.params.KEY 객체로 "2"(string type) 접근가능
+
+- [component](https://reactrouter.com/web/api/Route/component)
+
+- query string 사용
+
+  ```
+    npm i query-string -S
+  ```
+
+- query-string lib
+  - [query-string](https://github.com/sindresorhus/query-string#readme)
 
 # Getting Started with Create React App
 
