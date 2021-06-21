@@ -1,36 +1,34 @@
-// import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 import Home from './pages/Home';
 import About from './pages/About';
 import Users from './pages/Users';
+import Topics from './pages/Topics';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-function App() {
+export default function App() {
   return (
     <Router>
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
-          </ul>
-        </nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/topics">Topics</Link>
+          </li>
+        </ul>
 
         <Switch>
           <Route path="/about">
             <About />
           </Route>
-          <Route path="/users">
-            <Users />
+          <Route path="/topics">
+            <Topics />
           </Route>
-          <Route exact path="/">
+          <Route path="/">
             <Home />
           </Route>
         </Switch>
@@ -38,5 +36,3 @@ function App() {
     </Router>
   );
 }
-
-export default App;

@@ -61,6 +61,15 @@
 
 [react-router-dom quick start](https://reactrouter.com/web/guides/quick-start)
 
+# 적용 3 - nested Routing
+
+[nested-routing quick start](https://reactrouter.com/web/guides/quick-start/2nd-example-nested-routing)
+
+* [useRouteMatch](https://reactrouter.com/web/api/Hooks/useroutematch)
+  * The useRouteMatch hook attempts to match the current URL in the same way that a <Route> would. It’s mostly useful for getting access to the match data without actually rendering a <Route>.
+* [useParams](https://reactrouter.com/web/api/Hooks/useparams)
+  * useParams returns an object of key/value pairs of URL parameters. Use it to access match.params of the current <Route>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
