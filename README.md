@@ -1,3 +1,66 @@
+
+# 적용 1 - lint-staged, husky 사용 eslint, prettier를 commit 전에 적용 시키기
+
+1. husky(git hook) 설치
+
+* git hook, git 명령어 이벤트 수행시 명령어 수행 할 수 있게 도와주는 lib
+* npx husky install은 .git 파일 있는 dir에서 수행 해야한다.
+
+```
+  npm i husky -D
+  npx husky install
+```
+
+* husky package.json 설정
+
+```
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+```
+
+2. commit할때 git hook(husky)를 사용해 특정 명령어 수행
+: husky 명령어를 통해서 "npx lint-staged" 명령어 수행
+
+```
+  npx husky add .husky/pre-commit "npx lint-staged"
+```
+
+```
+  "scripts": {
+    "prepare": "husky install"
+  }
+```
+
+3. lint-staged, eslint, prettier를 devDependencies로 설치
+
+```
+  npm i lint-staged -D
+  npm i eslint prettier -D
+```
+
+4. lint-staged 설정
+: js, json 파일에서 할 수 있다.
+: package.json 설정 방법
+: **/*.js: 모든 폴더 js파일에 대해서
+  : eslint --fix, prettier --write, git add  명령어를 수행
+
+```
+  "lint-staged": {
+    "**/*.js": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
+  }
+```
+
+# 적용 2 - react-router-dom 적용
+
+[react-router-dom quick start](https://reactrouter.com/web/guides/quick-start)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
