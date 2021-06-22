@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 
 function Profile(props) {
   // const userId = props.match.params.userId;
-  let { userId } = useParams();
+  const { userId } = useParams();
 
   console.log('# Profile: ', { userId, typeofId: typeof userId });
 

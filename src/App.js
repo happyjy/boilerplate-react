@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Profile from './pages/Profile';
 import Topics from './pages/Topics';
+import NotFound from './pages/NotFound';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 export default function App() {
@@ -32,7 +33,8 @@ export default function App() {
           {/* <Route path="/profile" component={Profile} /> */}
           <Route path="/profile/:userId" component={Profile} />
           <Route path="/topics" component={Topics} />
-          <Route path="/" component={Home} />
+          <Route path="/" exact component={Home} />
+          <Route component={NotFound} />
         </Switch>
       </div>
     </Router>

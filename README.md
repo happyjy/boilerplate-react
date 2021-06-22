@@ -101,6 +101,13 @@
 - query-string lib
   - [query-string](https://github.com/sindresorhus/query-string#readme)
 
+# 적용 5 - Switch & notfound page 설정
+
+- 여러 Route 중 순서대로 먼저 맞는 하나만 보여줍니다.
+- exact 를 뺄 수 있는 로직을 만들 수 있습니다.
+- 가장 마지막에 어디 path 에도 맞지 않으면 보여지는 컴포넌트를 설정해서,
+"Not Found" 페이지를 만들 수 있습니다.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
