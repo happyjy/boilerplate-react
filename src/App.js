@@ -7,9 +7,16 @@ import About from './pages/About';
 import Profile from './pages/Profile';
 import Topics from './pages/Topics';
 import NotFound from './pages/NotFound';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom';
 
-export default function App() {
+const isLogin = false;
+
+function App() {
   return (
     <Router>
       <div>
@@ -20,6 +27,10 @@ export default function App() {
 
         <hr></hr>
         <Switch>
+          <Route
+            path="/login"
+            render={() => (isLogin ? <Redirect to="/" /> : <Login />)}
+          />
           <Route path="/about" component={About} />
           {/* <Route path="/profile" component={Profile} /> */}
           <Route path="/profile/:userId" component={Profile} />
@@ -32,3 +43,5 @@ export default function App() {
     </Router>
   );
 }
+
+export default App;
