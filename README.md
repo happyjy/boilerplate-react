@@ -72,15 +72,18 @@
 # 적용 4 - Dynamic Routing(with Route props)
 
 - routing시 이동시에 url을 통해 정보 전달 방법
+
   - 아래 두가지 방법 모두 route-props 정보를 통해서 얻을 수 있다.
-  
+
   1. useParams hook을 이용해서 value 전달
      1. props.match.params
   2. query parameters(key,value pair)
      1. props.location.search
 
 - [route-props](https://reactrouter.com/web/api/Route/route-props)
+
   - All three render methods will be passed the same three route props
+
     - match, location, history
 
   - route-props의 props.location.search
@@ -106,15 +109,28 @@
 - 여러 Route 중 순서대로 먼저 맞는 하나만 보여줍니다.
 - exact 를 뺄 수 있는 로직을 만들 수 있습니다.
 - 가장 마지막에 어디 path 에도 맞지 않으면 보여지는 컴포넌트를 설정해서,
-"Not Found" 페이지를 만들 수 있습니다.
+  "Not Found" 페이지를 만들 수 있습니다.
 
 # 적용 6 - List, NavLinks 적용
 
 - [List](https://reactrouter.com/web/api/Link)
+
   - Provides declarative, accessible navigation around your application.
 
 - [NavLinks](https://reactrouter.com/web/api/NavLink)
   - A special version of the <Link> that will add styling attributes to the rendered element when it matches the current URL.
+
+# 적용 7 - JS로 routing 하기(with withRouter)
+
+- 배울 두가지
+  - page에서 에서 js로 페이지 이동하는 방법
+  - page가 아닌 component에서 react-router-dom의 props값이 없다. 이때는 withRouter 객체를(react-router-dom pkg) 사용해서 props(match, location, history) 접근가능
+
+- [route-props](https://reactrouter.com/web/api/Route/route-props)
+- react-router-dom에 Route 객체 arguments에는 3개의 프로퍼티가 있다.(match, location, history)
+- 이 중 history.push를 이용해서 routing을 구현 할 수 있다.
+
+# 적용 8 -
 
 # Getting Started with Create React App
 
