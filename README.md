@@ -108,6 +108,14 @@
 - 가장 마지막에 어디 path 에도 맞지 않으면 보여지는 컴포넌트를 설정해서,
 "Not Found" 페이지를 만들 수 있습니다.
 
+# 적용 6 - List, NavLinks 적용
+
+- [List](https://reactrouter.com/web/api/Link)
+  - Provides declarative, accessible navigation around your application.
+
+- [NavLinks](https://reactrouter.com/web/api/NavLink)
+  - A special version of the <Link> that will add styling attributes to the rendered element when it matches the current URL.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
